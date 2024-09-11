@@ -41,6 +41,8 @@ jobs:
           mkdir /home/runner/work/secrets
       
       - name: Show GPG key content
+        env:
+          GPG_KEY: $${{ secrets.GPG_KEY }}
         run: |
            echo "GPG_KEY value: " ${{ secrets.GPG_KEY }}
       
