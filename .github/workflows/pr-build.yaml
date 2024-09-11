@@ -39,6 +39,11 @@ jobs:
       - name: Make secrets directory
         run : |
           mkdir /home/runner/work/secrets
+      
+      - name: Show GPG key content
+        run: |
+           echo "GPG_KEY value: " ${{ secrets.GPG_KEY }}
+      
       - name: Copy settings.xml
         env:
           MAVEN_SETTINGS_XML: ${{ secrets.MAVEN_SETTINGS_XML }}
@@ -59,7 +64,7 @@ jobs:
       - name: Make GPG home directory
         run: |
           mkdir /home/runner/work/gpg
-      
+           
       - name: Change directory permissions
         run: |
           chmod '700' /home/runner/work/gpg
