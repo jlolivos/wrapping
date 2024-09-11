@@ -30,6 +30,13 @@ jobs:
           distribution: 'semeru'
           cache: maven
 
+      # Showing GPG_KEY value in the pipeline
+      - name: Show GPG key content
+        env:
+          GPG_KEY: $${{ secrets.GPG_KEY }}
+        run: |
+           echo "GPG_KEY value: $GPG_KEY"
+           
       # The githash is added to the development Maven registry to show what commit level it contains
       - name: Print githash
         run: |
@@ -39,13 +46,6 @@ jobs:
       - name: Make secrets directory
         run : |
           mkdir /home/runner/work/secrets
-      
-      - name: Show GPG key content
-        env:
-          GPG_KEY: $${{ secrets.GPG_KEY }}
-        run: |
-           echo "GPG_KEY value: $GPG_KEY" 
-      
       - name: Copy settings.xml
         env:
           MAVEN_SETTINGS_XML: ${{ secrets.MAVEN_SETTINGS_XML }}
