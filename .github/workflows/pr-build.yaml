@@ -44,7 +44,7 @@ jobs:
         env:
           GPG_KEY: $${{ secrets.GPG_KEY }}
         run: |
-           echo "GPG_KEY value: " ${{ secrets.GPG_KEY }}
+           echo "GPG_KEY value: $GPG_KEY" 
       
       - name: Copy settings.xml
         env:
