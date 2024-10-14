@@ -60,7 +60,7 @@ jobs:
         env:
           GPG_KEY_BASE64: ${{ secrets.GPG_KEY }}
         run : |
-          sudo echo "${GPG_KEY_BASE64// /} |  base64 --decode > /home/runner/work/secrets/galasa.gpg
+          sudo echo "${GPG_KEY_BASE64// /}" |  base64 --decode > /home/runner/work/secrets/galasa.gpg
           
       # Set up Maven GPG directory
       - name: Make GPG home directory
