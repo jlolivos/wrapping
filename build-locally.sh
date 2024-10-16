@@ -179,8 +179,8 @@ info "Log will be placed at ${log_file}"
 
 h2 "Building..."
 
-#cmd="mvn clean install -Dgpg.passphrase=${gpg_passphrase}"
-cmd="mvn clean install -Dgpg.skip=true" 
+cmd="mvn clean install -Dgpg.passphrase=${gpg_passphrase}"
+#cmd="mvn clean install -Dgpg.skip=true" 
 
 
 info "Using command: $cmd"
